@@ -1,0 +1,19 @@
+{
+  "name": "notes_vanillajs",
+  "version": "1.0.0",
+  "description": "Notes website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nparashar150/note.it.git"
+  },
+  "author": "Naman Parashar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nparashar150/note.it/issues"
+  },
+  "homepage": "https://github.com/nparashar150/note.it#readme"
+}
