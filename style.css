@@ -1,0 +1,410 @@
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap');
+     :root {
+        --white: #ece4de;
+        --orange: #ff9900;
+        --orange-2: #ffab3e;
+        --orange-3: #ffca58;
+        --orange-4: #e0982c;
+        --orange-5: #dd8a0d;
+        --orange-6: #ffad32;
+        --dark-orange: #ba6f00;
+        --black: #161719;
+    }
+    
+    body {
+        background-color: var(--white);
+    }
+    
+     ::selection {
+        color: var(--orange);
+        background-color: var(--white);
+    }
+    
+    header nav {
+        padding: 1.5vw 0vw;
+    }
+    
+    header nav a {
+        color: var(--black);
+        text-decoration: none;
+        font-size: 1.625vw;
+        letter-spacing: 1px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    
+    header nav a:hover,
+    header nav a:focus {
+        color: var(--black);
+    }
+    
+    section h1 {
+        color: var(--black);
+        margin-top: 7vw;
+        font-size: 4rem;
+        font-weight: 700;
+        font-family: 'Ubuntu', sans-serif;
+        line-height: 0.9;
+    }
+    
+    section p {
+        color: var(--black);
+        font-size: 1.125vw;
+        padding-top: 2vw;
+        font-weight: 400;
+        font-family: 'Ubuntu', sans-serif;
+        padding-bottom: 1.5vw;
+    }
+    
+    section a {
+        padding: 1.275vw 2.75vw;
+        color: var(--white);
+        background-color: var(--orange);
+        border-radius: 2vw;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.15vw;
+        font-family: 'Ubuntu', sans-serif;
+        transition: all 0.5s;
+    }
+    
+    section a:hover,
+    section a:focus {
+        box-shadow: 3px 3px 3px var(--black);
+        color: var(--white);
+        background-color: var(--orange-2);
+    }
+    
+    .scene {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5vw;
+        height: 2.5vw;
+        perspective: 400px;
+    }
+    
+    .cube {
+        width: 2.5vw;
+        height: 2.5vw;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-100px);
+        transition: transform 1s;
+        animation: transformCube 3s infinite ease-in-out;
+    }
+    
+    @keyframes transformCube {
+        0% {
+            transform: translateZ(-100px) rotateY( 45deg) rotateX( 45deg);
+        }
+        50% {
+            transform: translateZ(-100px) rotateY( -45deg) rotateX( -45deg);
+        }
+        100% {
+            transform: translateZ(-100px) rotateY( 45deg) rotateX( 45deg);
+        }
+    }
+    
+    .face {
+        position: absolute;
+        width: 4vw;
+        height: 4vw;
+        border-radius: 5px;
+        border: 1px solid var(--dark-orange);
+    }
+    
+    .face--top {
+        background: var(--orange-6);
+    }
+    
+    .face--front {
+        background: var(--orange);
+    }
+    
+    .face--right {
+        background: var(--orange-4);
+    }
+    
+    .face--bottom {
+        background: var(--orange-5);
+    }
+    
+    .face--back {
+        background: var(--orange-2);
+    }
+    
+    .face--left {
+        background: var(--orange-3);
+    }
+    
+    .face--front {
+        transform: rotateY( 0deg) translateZ(2vw);
+    }
+    
+    .face--right {
+        transform: rotateY( 90deg) translateZ(2vw);
+    }
+    
+    .face--back {
+        transform: rotateY(180deg) translateZ(2vw);
+    }
+    
+    .face--left {
+        transform: rotateY(-90deg) translateZ(2vw);
+    }
+    
+    .face--top {
+        transform: rotateX( 90deg) translateZ(2vw);
+    }
+    
+    .face--bottom {
+        transform: rotateX(-90deg) translateZ(2vw);
+    }
+    
+    .radio-group {
+        display: none;
+    }
+    
+    .whole-cube {
+        position: absolute;
+        top: 39%;
+        left: 33%;
+        filter: drop-shadow(3mm 3mm 2mm #16171977);
+        transform: translate(-50%, -50%);
+    }
+    
+    .pen {
+        width: 10vw;
+        position: absolute;
+        top: 40%;
+        right: 5%;
+        transform: translate(-50%, -50%);
+        filter: hue-rotate(5deg) drop-shadow(3mm 2mm 5mm #161719ad);
+    }
+    
+    .page img:nth-child(1) {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        width: 30vw;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        filter: hue-rotate(150deg);
+    }
+    
+    .page img:nth-child(2) {
+        position: absolute;
+        top: 51%;
+        right: -0.25%;
+        width: 30vw;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+        filter: hue-rotate(150deg);
+    }
+    
+    .page img:nth-child(3) {
+        position: absolute;
+        top: 52%;
+        right: -0.5%;
+        width: 30vw;
+        transform: translate(-50%, -50%);
+        z-index: -3;
+        filter: hue-rotate(150deg);
+    }
+    
+    .page img:nth-child(4) {
+        position: absolute;
+        top: 53%;
+        right: -0.5%;
+        width: 30vw;
+        transform: translate(-50%, -50%);
+        z-index: -4;
+        filter: drop-shadow(3mm 6mm 5mm #161719b3) hue-rotate(150deg);
+    }
+    
+    .copyright p {
+        color: var(--black);
+        font-size: 1.125vw;
+        font-weight: 400;
+        font-family: 'Ubuntu', sans-serif;
+        position: absolute;
+        bottom: -2%;
+        left: 17.5%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .copyright a {
+        color: var(--black);
+        font-size: 1.125vw;
+        font-weight: 400;
+        font-family: 'Ubuntu', sans-serif;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    
+    .copyright a:hover,
+    .copyright a:focus {
+        color: var(--orange);
+    }
+    
+    .copyright a:nth-of-type(1) {
+        bottom: 0%;
+        right: 17.5%;
+    }
+    
+    .copyright a:nth-of-type(2) {
+        bottom: 0%;
+        right: 10.5%;
+    }
+    
+    .copyright a:nth-of-type(3) {
+        bottom: 0%;
+        right: 6.5%;
+    }
+    
+    .copyright a:nth-of-type(4) {
+        bottom: 0%;
+        right: 21.5%;
+    }
+    
+    @media only screen and (min-width: 1279px) {
+        .whole-cube {
+            top: 34.5%;
+            left: 32%;
+        }
+        .copyright p {
+            bottom: -2%;
+            left: 15.5%;
+        }
+    }
+    
+    @media only screen and (min-width: 1335px) {
+        .whole-cube {
+            top: 43.7%;
+            left: 32%;
+        }
+        .copyright p {
+            bottom: -2%;
+            left: 17.6%;
+        }
+        .scene {
+            perspective: 200px;
+        }
+        section h1 {
+            margin-top: 10vw;
+        }
+    }
+    
+    @media only screen and (min-width: 1599px) {
+        .whole-cube {
+            top: 38.3%;
+            left: 30%;
+        }
+        .copyright p {
+            bottom: -2%;
+            left: 16.7%;
+        }
+        .scene {
+            perspective: 130px;
+        }
+        section h1 {
+            margin-top: 11vw;
+        }
+    }
+    
+    @media only screen and (min-width: 1919px) {
+        .whole-cube {
+            top: 40.5%;
+            left: 33%;
+        }
+        .copyright p {
+            bottom: -2%;
+            left: 24.5%;
+        }
+        .scene {
+            perspective: 100px;
+        }
+        section h1 {
+            margin-top: 13vw;
+        }
+    }
+    
+    @media only screen and (min-width: 2159px) {
+        .whole-cube {
+            top: 38.7%;
+            left: 35%;
+        }
+        .copyright p {
+            bottom: -2%;
+            left: 28.2%;
+        }
+        .scene {
+            perspective: 70px;
+        }
+        section h1 {
+            margin-top: 10vw;
+        }
+        .pen {
+            top: 40%;
+            right: 7%;
+        }
+    }
+    
+    @media only screen and (min-width: 2559px) {
+        .whole-cube {
+            top: 42.5%;
+            left: 37.5%;
+        }
+        .copyright p {
+            bottom: -2%;
+            left: 32.2%;
+        }
+        .scene {
+            perspective: 65px;
+        }
+        section h1 {
+            margin-top: 15vw;
+        }
+        .pen {
+            top: 40%;
+            right: 10%;
+        }
+        .page img:nth-child(1) {
+            top: 50%;
+            right: 4%;
+        }
+        .page img:nth-child(2) {
+            top: 51%;
+            right: 3.75%;
+        }
+        .page img:nth-child(3) {
+            top: 52%;
+            right: 3.5%;
+        }
+        .page img:nth-child(4) {
+            top: 53%;
+            right: 3.25%;
+        }
+        .copyright a:nth-of-type(1) {
+            bottom: 0%;
+            right: 23.5%;
+        }
+        .copyright a:nth-of-type(2) {
+            bottom: 0%;
+            right: 16.5%;
+        }
+        .copyright a:nth-of-type(3) {
+            bottom: 0%;
+            right: 12.5%;
+        }
+        .copyright a:nth-of-type(4) {
+            bottom: 0%;
+            right: 27.3%;
+        }
+    }
