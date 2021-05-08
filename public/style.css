@@ -15,6 +15,28 @@
         --black: #161719;
     }
     
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+     ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        background: var(--orange);
+        border-radius: 10px;
+    }
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: var(--offorange);
+    }
+    
+    * {
+        scroll-behavior: smooth;
+    }
+    
     body {
         background-color: var(--white);
     }
@@ -234,7 +256,7 @@
         font-size: 1.125vw;
         font-weight: 400;
         font-family: 'Ubuntu', sans-serif;
-        position: absolute;
+        position: fixed;
         bottom: -2%;
         left: 17.5%;
         transform: translate(-50%, -50%);
@@ -245,7 +267,7 @@
         font-size: 1.125vw;
         font-weight: 400;
         font-family: 'Ubuntu', sans-serif;
-        position: absolute;
+        position: fixed;
         transform: translate(-50%, -50%);
         text-decoration: none;
         transition: color 0.5s;

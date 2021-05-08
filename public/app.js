@@ -26,7 +26,7 @@ function makeNotes() {
     let nukestring = "";
     notesObj.forEach(function(element, index) {
         nukestring += `
-                <div class="card text-dark m-3 mb-3" style="max-width: 18rem;">
+        <div class="card text-dark m-3 mb-3" style="max-width: 20rem;">
             <div class="card-header">Note-${index + 1}</div>
             <div class="card-body">
                 <p class="card-text">${element}
@@ -55,3 +55,19 @@ function deleteNote(index) {
     localStorage.setItem("notes", JSON.stringify(notesObj));
     makeNotes();
 }
+
+// let search = document.getElementById('searchNote');
+// search.addEventListener("input", function() {
+
+//     let searchVal = search.value.toLowerCase();
+//     console.log('event', searchVal);
+//     let cardBody = document.getElementsByClassName('card-body');
+//     Array.from(cardBody).forEach(function(element) {
+//         let cardtxt = element.getElementsByTagName("p").innerText;
+//         if (cardtxt.includes(searchVal)) {
+//             element.style.display = "block";
+//         } else {
+//             element.style.display = "none";
+//         }
+//     })
+// })
