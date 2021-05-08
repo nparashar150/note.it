@@ -195,11 +195,11 @@
     }
     
     .whole-cube {
-        position: absolute;
-        top: 39%;
-        left: 33%;
+        position: fixed;
+        top: 4%;
+        left: 17%;
         filter: drop-shadow(3mm 3mm 2mm #16171977);
-        transform: translate(-50%, -50%);
+        transform: scale(0.7) translate(-50%, -50%);
     }
     
     .pen {
