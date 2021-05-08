@@ -207,6 +207,7 @@
         position: absolute;
         top: 40%;
         right: 5%;
+        z-index: 5;
         transform: translate(-50%, -50%);
         filter: hue-rotate(5deg) drop-shadow(3mm 2mm 5mm #161719ad);
     }
@@ -217,7 +218,7 @@
         right: 0%;
         width: 30vw;
         transform: translate(-50%, -50%);
-        z-index: -1;
+        z-index: 4;
         filter: hue-rotate(150deg);
     }
     
@@ -227,7 +228,7 @@
         right: -0.25%;
         width: 30vw;
         transform: translate(-50%, -50%);
-        z-index: -2;
+        z-index: 3;
         filter: hue-rotate(150deg);
     }
     
@@ -237,7 +238,7 @@
         right: -0.5%;
         width: 30vw;
         transform: translate(-50%, -50%);
-        z-index: -3;
+        z-index: 2;
         filter: hue-rotate(150deg);
     }
     
@@ -247,7 +248,7 @@
         right: -0.5%;
         width: 30vw;
         transform: translate(-50%, -50%);
-        z-index: -4;
+        z-index: 1;
         filter: drop-shadow(3mm 6mm 5mm #161719b3) hue-rotate(150deg);
     }
     
