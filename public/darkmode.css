@@ -97,3 +97,12 @@ input:checked+.slider:before {
 .dark-mode-body .whole-cube {
     filter: drop-shadow(2mm 2mm 2mm var(--white-shadow));
 }
+
+.dark-mode-body .circle-login {
+    border: 2px solid var(--white);
+}
+
+.dark-mode-body .circle-login:hover,
+.circle-login:focus {
+    box-shadow: 0 0 7px var(--white);
+}

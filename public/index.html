@@ -14,8 +14,13 @@
 
 <body class="container">
     <header>
-        <nav class="container">
-            <a href="index.html">note.it</a>
+        <nav class="container row">
+            <a class="col-10" href="index.html">note.it</a>
+            <div onclick="googleLogin()" title="Login" id="login-circle" class="circle-login">
+                <img id="login-circle-img" src="" style="max-width: 50px; max-height: 50px;" alt="" />
+                <div id="login-circle-face" class="face-login"></div>
+                <div id="login-circle-body" class="body-login"></div>
+            </div>
         </nav>
     </header>
     <section class="container">
@@ -23,7 +28,7 @@
         <p>This stunnning website gives you power to create <br> beautiful notes, make greatest plans, and planning <br> your day wherever you are.</p>
         <a href="create.html">Create Notes</a>
         <div class="container">
-            <div class="whole-cube">
+            <div class="whole-cube px-3">
                 <div class="scene">
                     <div class="cube">
                         <div class="face face--front"></div>
@@ -65,13 +70,56 @@
     <script src="app.js"></script>
     <script src="theme.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCBkZGf2QbiAN81fl9BMwjvMBMaCEozbTE",
+            authDomain: "msms-224ad.firebaseapp.com",
+            databaseURL: "https://msms-224ad.firebaseio.com",
+            projectId: "msms-224ad",
+            storageBucket: "msms-224ad.appspot.com",
+            messagingSenderId: "615277990639",
+            appId: "1:615277990639:web:33291a1d7843b4f162411a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let provider = new firebase.auth.GoogleAuthProvider();
+
+        function googleLogin() {
+            firebase.auth().signInWithPopup(provider).then(result => {
+                console.log(result.user);
+                showUserData(result.user);
+                document.getElementById('login-circle-face').style.display = 'none';
+                document.getElementById('login-circle-body').style.display = 'none';
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+
+        function showUserData(user) {
+            document.getElementById('login-circle-img').src = `${user.photoURL}`
+        }
+
+        function checkAuthState() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    document.getElementById('login-circle-img').style.display = 'block';
+                    document.getElementById('login-circle-face').style.display = 'none';
+                    document.getElementById('login-circle-body').style.display = 'none';
+                    showUserData(user)
+                } else {
+
+                }
+            })
+        }
+        checkAuthState();
+    </script>
 </body>
 
 </html>

@@ -38,7 +38,7 @@ function makeNotes() {
     let notesElement = document.getElementById('notes');
     if (notesObj.length != 0) {
         notesElement.innerHTML = nukestring;
-    } else {
+    } else if (notesObj.length == null) {
         notesElement.innerHTML = `<p class="container d-flex justify-content-center align-items-center text-danger">Create your first note now....</p>`
     }
 }
