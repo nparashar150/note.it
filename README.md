@@ -1,0 +1,1 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3153a14d4b4e4a609f88606e1d9f3059)](https://www.codacy.com/gh/nparashar150/note.it/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nparashar150/note.it&amp;utm_campaign=Badge_Grade)
