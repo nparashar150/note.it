@@ -31,7 +31,7 @@ function makeNotes() {
             <div class="card-body">
                 <p class="card-text">${element}
                 </p>
-                <button type="submit" class="mt-3 btn btn-create text-white mb-2" onclick="deleteNote()">Delete Note-${index + 1}</button>
+                <button type="submit" class="mt-3 btn btn-create text-white mb-2" onclick="deleteNote(${index})">Delete Note-${index + 1}</button>
             </div>
         </div>`;
     });
