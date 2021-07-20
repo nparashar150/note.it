@@ -331,6 +331,14 @@ section a:focus {
     border: none;
 }
 
+.form-control {
+    resize: both;
+    max-width: 40vw;
+    min-width: 10vw;
+    max-height: 40vh;
+    min-height: 10vh;
+}
+
 .form-control,
 .form-control:hover,
 .form-control:focus {
